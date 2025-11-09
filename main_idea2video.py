@@ -5,13 +5,18 @@ from pipelines.idea2video_pipeline import Idea2VideoPipeline
 # SET YOUR OWN IDEA, USER REQUIREMENT, AND STYLE HERE
 idea = \
 """
-If a cat and a dog are best friends, what would happen when they meet a new cat?
+A retired teacher in rural India learns coding at age 65 to build an educational app 
+for underprivileged children. Despite struggles with technology and doubt from family, 
+she perseveres. Six months later, her app reaches 10,000 students, 
+and she becomes a local hero.
 """
 user_requirement = \
 """
-For children, do not exceed 3 scenes. Each scene should be no more than 5 shots.
+Inspirational tone for general audience. 4 scenes. 
+5-7 shots per scene. Include wide establishing shots and emotional moments.
 """
-style = "Cartoon"
+style = "Documentary realism, natural lighting, warm color grading, intimate camera angles"
+
 
 
 async def main():

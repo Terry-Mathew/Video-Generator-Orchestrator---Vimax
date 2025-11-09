@@ -460,6 +460,29 @@ style = "Animate Style"
 ```
 
 
+### 🎞️ Use Fal.ai generators (optional)
+Fal.ai can replace Google-hosted models if you prefer their pricing or quality.
+
+1. Install requirements (already included in `pyproject.toml`): `uv sync` pulls the `fal-client` dependency.
+2. Set your Fal API key, either via environment (`set FAL_KEY=...` on Windows / `export FAL_KEY=...` on macOS/Linux) or directly in the YAML.
+3. Update the generator blocks in `configs/idea2video.yaml` (and `configs/script2video.yaml` if needed):
+   ```yaml
+   image_generator:
+     class_path: tools.ImageGeneratorFalAPI
+     init_args:
+       api_key: "<YOUR_FAL_KEY>"
+       model: "fal-ai/flux/dev"            # choose any Fal text-to-image endpoint
+
+   video_generator:
+     class_path: tools.VideoGeneratorFalAPI
+     init_args:
+       api_key: "<YOUR_FAL_KEY>"
+       model: "fal-ai/minimax-video/image-to-video"  # pick your preferred Fal video model
+   ```
+4. Optional: add `default_arguments` to fine-tune prompts, seeds, durations, etc. (any parameters accepted by the Fal endpoint will pass through).
+
+Run the pipeline as usual with `uv run python main_idea2video.py`.
+
 ---
 
 **🌟 If this project helps you, please give us a Star!**

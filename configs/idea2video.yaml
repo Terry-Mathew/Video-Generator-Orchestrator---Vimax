@@ -7,17 +7,17 @@ chat_model:
 
 
 image_generator:
-  class_path: tools.ImageGeneratorFalAPI
+  class_path: tools.ImageGeneratorKieAPI
   init_args:
     api_key: ""
-    model: fal-ai/imagen4/preview/fast
+    model: "flux-kontext-pro"
 
 
 video_generator:
-  class_path: tools.VideoGeneratorFalAPI
+  class_path: tools.VideoGeneratorKieAPI
   init_args:
     api_key: ""
-    model: fal-ai/veo3.1/fast/image-to-video
+    model: "veo3"
 
 
 working_dir: .working_dir/idea2video
